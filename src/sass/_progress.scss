@@ -1,0 +1,59 @@
+.progress {
+  position: relative;
+  margin: 0 auto 6em;
+  border-radius: 10px;
+  background: $secondC;
+  height: 5px;
+  z-index: -1;
+  display: flex;
+  justify-content: space-between;
+
+  &__line {
+    position: absolute;
+    height: 100%;
+    background: $baseC;
+    transition: width 0.3s ease-in-out;
+  }
+
+  &__step {
+    position: relative;
+    top: -20px;
+    &--2 {
+      text-align: center;
+      .progress__dot {
+        margin: 0 auto;
+      }
+    }
+    &--3 {
+      text-align: right;
+      .progress__dot {
+        margin-left: auto;
+      }
+    }
+  }
+  &__dot {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: white;
+    border: 2px solid $secondC;
+    @include flexAndCenter();
+    justify-content: center;
+    font-weight: bold;
+  }
+}
+.completed {
+  .progress__dot {
+    background-color: $baseC;
+    border-color: $baseC;
+    color: #fff;
+  }
+}
+.active {
+  font-weight: bold;
+  color: $baseC;
+  .progress__dot {
+    border-color: $baseC;
+  }
+}

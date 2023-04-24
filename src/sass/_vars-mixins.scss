@@ -1,0 +1,22 @@
+$baseC: #c33764;
+$secondC: #1d2671;
+$seletedC: #ccc;
+$cardBorderR: 2em;
+$bShadow: 0 0 2px 2px rgba(0, 0, 0, 0.25);
+
+$s: 40em;
+$m: 64em;
+$l: 84em;
+
+@mixin flexAndCenter() {
+  display: flex;
+  align-items: center;
+}
+@mixin btnLike() {
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border: none;
+  border-radius: 2em;
+}
+@mixin gradientBg($side) {
+  background: linear-gradient(to $side, $secondC, $baseC);
+}

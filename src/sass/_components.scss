@@ -1,0 +1,110 @@
+/**************
+** HELPERS ****/
+.btn {
+  @include btnLike();
+  padding: 0.75em 1em;
+  background-color: $baseC;
+  color: #fff;
+  text-transform: uppercase;
+  transition: all 0.3s;
+  cursor: pointer;
+  &:hover {
+    background-color: $secondC;
+  }
+  &--disabled {
+    pointer-events: none;
+    background-color: $seletedC;
+  }
+  &--next,
+  &--submit {
+    margin-left: auto;
+  }
+}
+.navigation {
+  @include flexAndCenter();
+}
+
+/**************
+** MODAL ****/
+.modal {
+  position: absolute;
+  width: 80%;
+  left: 10%;
+  top: 20%;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: $cardBorderR;
+  backdrop-filter: blur(2px);
+  z-index: 2;
+  &__content {
+    position: relative;
+    padding: 2em;
+  }
+  &__header {
+    @include flexAndCenter();
+    justify-content: space-between;
+    margin-bottom: 1em;
+    font-size: 1.3em;
+  }
+  &__report {
+    margin-bottom: 1em;
+    font-weight: bold;
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2px);
+  z-index: 1;
+}
+
+/*********************
+** MEDIA QUERIES ****/
+
+@media (min-width: $s) {
+  .btn {
+    padding-inline: 1.55em;
+    &--view,
+    &--close {
+      padding-block: 1em;
+    }
+  }
+}
+
+@media (min-width: $m) {
+  .modal {
+    width: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    &__content {
+      padding: 4em;
+    }
+    &__report {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1em;
+    }
+    .btn {
+      &--close {
+        position: absolute;
+        top: 2em;
+        right: 2em;
+      }
+    }
+  }
+}
+
+@media (min-width: $m) {
+  .modal {
+    &__content {
+      padding-block: 6em;
+    }
+  }
+}

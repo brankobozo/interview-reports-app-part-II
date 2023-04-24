@@ -1,0 +1,19 @@
+.header {
+  padding-block: 2em;
+  box-shadow: $bShadow;
+
+  &__title {
+    @include flexAndCenter();
+  }
+  .btn + .btn {
+    margin-left: 2em;
+  }
+}
+@media (min-width: $s) {
+  .header {
+    padding-block: 3em;
+    br {
+      display: none;
+    }
+  }
+}

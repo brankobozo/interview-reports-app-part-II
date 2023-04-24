@@ -1,0 +1,56 @@
+.card__radio {
+  display: none;
+  &:checked + .card {
+    background-color: $seletedC;
+  }
+}
+.input--selected {
+  background-color: $seletedC;
+}
+/*********************
+** SELECTED ****/
+.form {
+  margin-bottom: 2em;
+  &__selected {
+    margin-bottom: 2em;
+  }
+  &__inputs {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1em;
+    input,
+    select,
+    textarea {
+      width: 100%;
+    }
+  }
+}
+
+.main__search {
+  display: block;
+  text-indent: 0.5em;
+  margin-bottom: 2em;
+  height: 35px;
+  @include btnLike();
+  font-size: 0.875em;
+  &:focus {
+    border: none;
+    outline: 1px solid $baseC;
+  }
+}
+
+@media (min-width: $s) {
+  .form {
+    &__inputs {
+      grid-template-columns: 1fr 1fr 1fr;
+      .form__group:last-child {
+        grid-column: 1/4;
+      }
+    }
+  }
+  .main__search {
+    &:focus {
+      width: 500px;
+    }
+  }
+}
